@@ -1,7 +1,10 @@
 def sumOfelems(numbers, exclude_negative=False):
     total = 0
     for num in numbers:
-        if not exclude_negative or num >= 0:
+        if exclude_negative:
+            if num >= 0:
+                total += num
+        else:
             total += num
     return total
 
@@ -13,4 +16,5 @@ exclude_negative = exclude_choice == 'yes'
 
 total_sum = sumOfelems(numbers_list, exclude_negative)
 print("Sum of the elements:", total_sum)
+
 
